@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# Get current branch name
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+# Allowed types
+TYPES="feature|bugfix|chore|hotfix|ci|refactor|merge"
+
+# Validation pattern
+PATTERN="^(${TYPES})/WKND-[0-9]+(-[a-z0-9-]+)?$"
+
+# Default branch type
+BRANCH_TYPE="feature"
+
+# Extract description from user branch
+DESCRIPTION=$(echo "$BRANCH_NAME" | sed 's#[^a-zA-Z0-9-]#-#g')
+
+# Remove type if partially present
+DESCRIPTION=$(echo "$DESCRIPTION" | sed -E "s#^(${TYPES})[-/]##")
+
+# Remove existing ticket if present
+DESCRIPTION=$(echo "$DESCRIPTION" | sed -E "s#WKND-[0-9]+-##")
+
+# Remove leading/trailing hyphens
+DESCRIPTION=$(echo "$DESCRIPTION" | sed 's/^-*//;s/-*$//')
+
+# Default description
+if [ -z "$DESCRIPTION" ]; then
+  DESCRIPTION="description"
+fi
+
+# Validate branch name
+if ! echo "$BRANCH_NAME" | grep -Eq "$PATTERN"; then
+
+  echo -e "\033[1;31m❌ ERROR: Invalid branch name\033[0m"
+  echo -e "\033[1;31m   Current branch:\033[0m $BRANCH_NAME"
+  echo -e "\033[1;32m✅ Expected format:\033[0m"
+  echo -e "   type/WKND-XXX-description"
+  echo -e "\033[1m   Allowed types:\033[0m feature, bugfix, chore, hotfix, ci, refactor, merge"
+  echo -e "\033[1m   Example:\033[0m ${BRANCH_TYPE}/WKND-123-${DESCRIPTION}"
+
+  exit 1
+fi
