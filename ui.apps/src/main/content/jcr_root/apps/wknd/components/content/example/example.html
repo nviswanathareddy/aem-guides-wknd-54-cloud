@@ -1,0 +1,22 @@
+<sly data-sly-include="items/styles.html" />
+
+<div
+  data-sly-use.item="com.adobe.aem.guides.wknd.core.models.ExampleModelInterface"
+  data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+  data-sly-test.hasContent="${item.name}"
+  class="cmp-example"
+>
+  <div class="cmp-example__content">
+    <p class="cmp-example__name">${item.name}</p>
+
+    <p class="cmp-example__roles">${item.roles @ join=', '}</p>
+  </div>
+
+  <sly data-sly-include="items/multifieldItems.html" />
+  <sly data-sly-include="items/nestedMultifieldItems.html" />
+  <sly data-sly-include="items/PropertyOperations.html" />
+</div>
+
+<sly
+  data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"
+></sly>

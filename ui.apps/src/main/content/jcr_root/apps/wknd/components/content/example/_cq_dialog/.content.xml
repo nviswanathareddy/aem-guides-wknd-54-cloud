@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    trackingFeature="wknd:content-components:example">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <authorDetails
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Author Details"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="&#xa;Name"
+                                                name="./name"
+                                                required="{Boolean}true"/>
+                                            <roles
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                fieldDescription="Author Roles"
+                                                fieldLabel="Roles">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    emptyText="Enter your role"
+                                                    fieldLabel="Text"
+                                                    name="./roles"/>
+                                            </roles>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </authorDetails>
+                    <multifieldItems
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Multifield Items"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <multifieldDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Multifield Description"
+                                                name="./multifieldDescription"/>
+                                            <platformItems
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldLabel="Platforms (Composite Multifield)">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./platformItems">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <heading
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                            level="{Long}3"
+                                                            text="Composite Multifield"/>
+                                                        <platformName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="&#xa;Platform Name"
+                                                            name="./platformName"/>
+                                                        <platformYear
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                            fieldLabel="&#xa;Platform Year"
+                                                            name="./platformYear"/>
+                                                    </items>
+                                                </field>
+                                            </platformItems>
+                                            <nestedMultifieldDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Nested Multifield Description"
+                                                name="./nestedMultifieldDescription"/>
+                                            <productItems
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldLabel="Products (Parent Multifield)">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./productItems">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <heading
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                            level="{Long}3"
+                                                            text="Nested Multifield (Parent Items)"/>
+                                                        <productName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Product Name"
+                                                            name="./productName"/>
+                                                        <productStatus
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                            fieldLabel="Product Status"
+                                                            name="./productStatus">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <active
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    checked="{Boolean}true"
+                                                                    text="Active"
+                                                                    value="active"/>
+                                                                <inactive
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="In-active"
+                                                                    value="in-active"/>
+                                                            </items>
+                                                        </productStatus>
+                                                        <productInfoItems
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                            composite="{Boolean}true"
+                                                            fieldLabel="Product Details (Nested Multifield)">
+                                                            <field
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                name="./productInfoItems">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <heading
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                                        level="{Long}3"
+                                                                        text="Nested Multifield (Child Items)"/>
+                                                                    <productStorage
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldLabel="Product Storage"
+                                                                        name="./productStorage"/>
+                                                                    <productPrice
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                        fieldLabel="Product Price"
+                                                                        name="./productPrice"/>
+                                                                </items>
+                                                            </field>
+                                                        </productInfoItems>
+                                                    </items>
+                                                </field>
+                                            </productItems>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </multifieldItems>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

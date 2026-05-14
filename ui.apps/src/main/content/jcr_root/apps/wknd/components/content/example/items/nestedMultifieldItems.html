@@ -1,0 +1,42 @@
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ExampleModel" />
+
+<div data-sly-test="${model.productItems}" class="cmp-product-wrapper">
+  <hr />
+  <h2 class="cmp-product__heading">Nested Multifield Items</h2>
+
+  <p class="cmp-product__description">${model.nestedMultifieldDescription}</p>
+
+  <div class="cmp-product__grid" data-sly-list.product="${model.productItems}">
+    <div
+      class="cmp-product ${product.productStatus == 'active' ? 'cmp-product--active' : 'cmp-product--inactive'}"
+    >
+      <p>
+        <strong>Product Name :</strong>
+        ${product.productName}
+      </p>
+
+      <p>
+        <strong>Product Status :</strong>
+        ${product.productStatus}
+      </p>
+
+      <div data-sly-test="${product.productInfoItems}">
+        <h3>Product Variants</h3>
+
+        <div data-sly-list.variant="${product.productInfoItems}">
+          <div class="cmp-variant">
+            <p>
+              <strong>Storage :</strong>
+              ${variant.productStorage}
+            </p>
+
+            <p>
+              <strong>Price :</strong>
+              ₹${variant.productPrice}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

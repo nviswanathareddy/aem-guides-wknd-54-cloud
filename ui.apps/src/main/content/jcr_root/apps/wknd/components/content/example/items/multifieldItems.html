@@ -1,0 +1,25 @@
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ExampleModel" />
+
+<div data-sly-test="${model.platformItems}" class="cmp-platform-wrapper">
+  <hr />
+  <h2 class="cmp-platform__heading">Composite Multifield Items</h2>
+
+  <p class="cmp-platform__description">${model.multifieldDescription}</p>
+
+  <div
+    class="cmp-platform__grid"
+    data-sly-list.platform="${model.platformItems}"
+  >
+    <div class="cmp-platform">
+      <p>
+        <strong>Platform Name :</strong>
+        ${platform.platformName}
+      </p>
+
+      <p>
+        <strong>Platform Year :</strong>
+        ${platform.platformYear}
+      </p>
+    </div>
+  </div>
+</div>
