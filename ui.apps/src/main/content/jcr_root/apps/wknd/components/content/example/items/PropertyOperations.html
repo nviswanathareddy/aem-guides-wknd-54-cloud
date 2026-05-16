@@ -1,0 +1,42 @@
+<div
+  class="cmp-propertyoperations-wrapper"
+  data-sly-use.model="com.adobe.aem.guides.wknd.core.models.PropertyOperationsModel"
+>
+  <h2 class="cmp-propertyoperations__heading">Properties API Operations</h2>
+
+  <div class="cmp-propertyoperations__grid">
+    <div class="cmp-propertyoperations">
+      <h2>Current Page Properties</h2>
+      <p><strong>Title:</strong> ${model.currentPageTitle}</p>
+      <p><strong>Path:</strong> ${model.currentPagePath}</p>
+      <p>
+        <strong>Custom Property:</strong> ${model.currentPageCustomProperty}
+      </p>
+    </div>
+
+    <div class="cmp-propertyoperations">
+      <h2>Current Resource Properties</h2>
+      <p><strong>Name:</strong> ${model.currentResourceName}</p>
+      <p><strong>Path:</strong> ${model.currentResourcePath}</p>
+      <p>
+        <strong>Custom Property:</strong> ${model.currentResourceCustomProperty}
+      </p>
+    </div>
+
+    <div class="cmp-propertyoperations">
+      <h2>Other Page Properties</h2>
+      <p><strong>Title:</strong> ${model.otherPageTitle}</p>
+      <p><strong>Path:</strong> ${model.otherPagePath}</p>
+      <p><strong>Custom Property:</strong> ${model.otherPageCustomProperty}</p>
+    </div>
+
+    <div class="cmp-propertyoperations">
+      <h2>Other Resource Properties</h2>
+      <p><strong>Name:</strong> ${model.otherResourceName}</p>
+      <p><strong>Path:</strong> ${model.otherResourcePath}</p>
+      <p>
+        <strong>Custom Property:</strong> ${model.otherResourceCustomProperty}
+      </p>
+    </div>
+  </div>
+</div>
