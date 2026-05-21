@@ -1,0 +1,5 @@
+{
+    "scripts":[
+        "create service user wknd-safe-service-user\nset ACL for wknd-safe-service-user\n  allow jcr:all on /content\nend"
+    ]
+}
