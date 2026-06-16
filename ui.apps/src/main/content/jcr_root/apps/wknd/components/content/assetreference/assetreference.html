@@ -1,0 +1,39 @@
+Asset Reference Component
+
+<style>
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .image-card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    .image-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    @media (max-width: 1024px) {
+        .image-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .image-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="image-grid" data-sly-list.image="${properties.images}">
+    <div class="image-card">
+        <img src="${image}" alt="Image ${itemList.count}">
+    </div>
+</div>
