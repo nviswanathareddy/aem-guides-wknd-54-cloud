@@ -140,5 +140,11 @@ Import-Package: javax.annotation;version=0.0.0,*
             <version>1.4.14</version>
             <scope>test</scope>
         </dependency>
+        <!-- Source: https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>

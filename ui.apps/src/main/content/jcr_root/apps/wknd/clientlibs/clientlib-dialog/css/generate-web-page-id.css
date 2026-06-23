@@ -1,0 +1,31 @@
+.generate-web-page-id-btn {
+    border-radius: 8px;
+}
+
+.cmp-webpageid-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.cmp-webpageid-row .coral-Form-fieldwrapper {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.cmp-webpageid-row coral-button,
+.cmp-webpageid-row button {
+    margin-top: 28px;
+    flex-shrink: 0;
+}
+
+/* Center Granite/Coral Toast notifications */
+.wknd-toast-center {
+    position: fixed !important;
+    top: 5% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 99999 !important;
+}

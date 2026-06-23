@@ -597,6 +597,13 @@ Bundle-DocURL:
         <version>1.0.1</version>
         <scope>test</scope>
       </dependency>
+      <!-- Source: https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.14.0</version>
+        <scope>test</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>
